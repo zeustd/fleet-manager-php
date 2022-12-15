@@ -1,5 +1,5 @@
 <?php
-include('FleetManager-class.php');
+include('FleetManager.php');
 
 $db_conn = new mysqli("localhost", "user", "password", "database");
 
