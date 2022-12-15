@@ -42,3 +42,12 @@ CREATE TABLE vehicle_documents (
   document_type VARCHAR(255) NOT NULL,
   file_name VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE accidents (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  vehicle_id INTEGER NOT NULL,
+  date DATE NOT NULL,
+  location VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  cost DECIMAL(10, 2) NOT NULL
+);
