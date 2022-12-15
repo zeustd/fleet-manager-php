@@ -27,5 +27,7 @@ $cost = 45.99;
 $type = "regular";
 $maintenance_id = $fleetManager->recordMaintenance($vehicle_id, $date, $odometer, $description, $cost, $type);
 
+// set a maintenance interval for the vehicle
+$fleetManager->setMaintenanceInterval($vehicle_id, "Oil Change", 5000, 3000);
 
 ?>
