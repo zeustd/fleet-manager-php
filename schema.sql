@@ -16,3 +16,14 @@ CREATE TABLE purchases (
   product VARCHAR(255) NOT NULL,
   FOREIGN KEY (vehicle_id) REFERENCES fleet(id)
 );
+
+CREATE TABLE maintenance (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  vehicle_id INT NOT NULL,
+  date DATE NOT NULL,
+  odometer INT NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  cost FLOAT NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  FOREIGN KEY (vehicle_id) REFERENCES fleet(id)
+);
