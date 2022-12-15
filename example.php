@@ -30,4 +30,9 @@ $maintenance_id = $fleetManager->recordMaintenance($vehicle_id, $date, $odometer
 // set a maintenance interval for the vehicle
 $fleetManager->setMaintenanceInterval($vehicle_id, "Oil Change", 5000, 3000);
 
+// add some digital documents to the vehicle
+$fleetManager->manageDigitalDocuments($vehicle_id, "Insurance Certificate", "insurance_certificate.pdf");
+$fleetManager->manageDigitalDocuments($vehicle_id, "Registration Form", "registration_form.pdf");
+$fleetManager->manageDigitalDocuments($vehicle_id, "Owner's Manual", "owners_manual.pdf");
+
 ?>
