@@ -1,0 +1,18 @@
+CREATE TABLE fleet (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  make VARCHAR(255) NOT NULL,
+  model VARCHAR(255) NOT NULL,
+  year INT NOT NULL,
+  vin VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE purchases (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  vehicle_id INT NOT NULL,
+  date DATE NOT NULL,
+  odometer INT NOT NULL,
+  cost FLOAT NOT NULL,
+  attributes VARCHAR(255) NOT NULL,
+  product VARCHAR(255) NOT NULL,
+  FOREIGN KEY (vehicle_id) REFERENCES fleet(id)
+);
