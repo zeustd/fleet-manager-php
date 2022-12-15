@@ -51,6 +51,14 @@ class FleetManager {
     $stmt->execute();
     return $stmt->insert_id;
   }
+  
+  public function manageDigitalDocuments($vehicle_id, $document_type, $file_name) {
+    // insert the document into the database
+    $query = "INSERT INTO vehicle_documents (vehicle_id, document_type, file_name) VALUES (?, ?, ?)";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("iss", $vehicle_id, $document_type, $file_name);
+    $stmt->execute();
+  }
 
   
 }
