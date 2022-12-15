@@ -60,6 +60,14 @@ class FleetManager {
     $stmt->execute();
   }
 
+  public function recordAccident($vehicle_id, $date, $location, $description, $cost) {
+    $query = "INSERT INTO accidents (vehicle_id, date, location, description, cost) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("isssd", $vehicle_id, $date, $location, $description, $cost);
+    $stmt->execute();
+    return $stmt->insert_id;
+  }
+
   
 }
 
