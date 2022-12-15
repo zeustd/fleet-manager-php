@@ -18,5 +18,14 @@ foreach ($fleet as $vehicle) {
 // record a gas purchase for the vehicle
 $purchase_id = $fleetManager->recordGasPurchase($vehicle_id, "2022-12-15", 1234, 50.75, '{"gallons": 10}', "gas");
 
+// record a maintenance event for vehicle with id 1
+$vehicle_id = 1;
+$date = "2022-12-15";
+$odometer = 123450;
+$description = "Oil change";
+$cost = 45.99;
+$type = "regular";
+$maintenance_id = $fleetManager->recordMaintenance($vehicle_id, $date, $odometer, $description, $cost, $type);
+
 
 ?>
