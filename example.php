@@ -35,4 +35,7 @@ $fleetManager->manageDigitalDocuments($vehicle_id, "Insurance Certificate", "ins
 $fleetManager->manageDigitalDocuments($vehicle_id, "Registration Form", "registration_form.pdf");
 $fleetManager->manageDigitalDocuments($vehicle_id, "Owner's Manual", "owners_manual.pdf");
 
+// record an accident for the vehicle
+$fleetManager->recordAccident($vehicle_id, "2022-12-15", "Highway 101", "Rear-ended by another vehicle", 500);
+
 ?>
