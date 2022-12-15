@@ -27,6 +27,16 @@ class FleetManager {
     }
     return $fleet;
   }
+  
+  public function recordGasPurchase($vehicle_id, $date, $odometer, $cost, $attributes, $product) {
+    $query = "INSERT INTO purchases (vehicle_id, date, odometer, cost, attributes, product) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("isids", $vehicle_id, $date, $odometer, $cost, $attributes, $product);
+    $stmt->execute();
+    return $stmt->insert_id;
+  }
+  
+  
 }
 
 ?>
