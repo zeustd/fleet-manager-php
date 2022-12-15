@@ -27,3 +27,11 @@ CREATE TABLE maintenance (
   type VARCHAR(255) NOT NULL,
   FOREIGN KEY (vehicle_id) REFERENCES fleet(id)
 );
+
+CREATE TABLE maintenance_intervals (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  vehicle_id INTEGER NOT NULL,
+  maintenance_type VARCHAR(255) NOT NULL,
+  start INTEGER NOT NULL,
+  interval INTEGER NOT NULL
+);
