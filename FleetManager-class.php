@@ -36,6 +36,14 @@ class FleetManager {
     return $stmt->insert_id;
   }
   
+  public function recordMaintenance($vehicle_id, $date, $odometer, $description, $cost, $type) {
+    $query = "INSERT INTO maintenance (vehicle_id, date, odometer, description, cost, type) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("isisd", $vehicle_id, $date, $odometer, $description, $cost, $type);
+    $stmt->execute();
+    return $stmt->insert_id;
+  }
+  
   
 }
 
