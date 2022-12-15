@@ -8,4 +8,10 @@ You can also use the getFleet method to retrieve a list of all vehicles in the f
 This would print a list of all vehicles in the fleet, with each vehicle on a new line in the format "YEAR MAKE MODEL".
 
 
+### Supported Features:
+- Add Vehicle
+- Get Fleet (Vehicles)
+- Record Gas/Fuel Purchase
+
+
 
