@@ -44,6 +44,14 @@ class FleetManager {
     return $stmt->insert_id;
   }
   
+  public function setMaintenanceInterval($vehicle_id, $maintenance_type, $start, $interval) {
+    $query = "INSERT INTO maintenance_intervals (vehicle_id, maintenance_type, start, interval) VALUES (?, ?, ?, ?)";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("isii", $vehicle_id, $maintenance_type, $start, $interval);
+    $stmt->execute();
+    return $stmt->insert_id;
+  }
+
   
 }
 
