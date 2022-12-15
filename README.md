@@ -12,6 +12,10 @@ This would print a list of all vehicles in the fleet, with each vehicle on a new
 - Add Vehicle
 - Get Fleet (Vehicles)
 - Record Gas/Fuel Purchase
+- Record Maintenance
+- Set Maintenance Reminders/Schedule
+- Record Digital Documents
+- Record Accidents
 
 
 
