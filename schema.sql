@@ -35,3 +35,10 @@ CREATE TABLE maintenance_intervals (
   start INTEGER NOT NULL,
   interval INTEGER NOT NULL
 );
+
+CREATE TABLE vehicle_documents (
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  vehicle_id INTEGER NOT NULL,
+  document_type VARCHAR(255) NOT NULL,
+  file_name VARCHAR(255) NOT NULL
+);
