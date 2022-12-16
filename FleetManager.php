@@ -32,6 +32,40 @@ class FleetManager {
     return $fleet;
   }
   
+  // method to get vehicle id based on uniqueId
+  public function getVehicleIdByUniqueId($uniqueId) {
+    $query = "SELECT id FROM fleet WHERE uniqueId = ?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("s", $uniqueId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row['id'];
+  }
+
+  // method to update gps_tracking_id for a specific vehicle
+  public function updateGpsTrackingId($vehicle_id, $gps_tracking_id) {
+    $query = "UPDATE fleet SET gps_tracking_id = ? WHERE id = ?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("ii", $gps_tracking_id, $vehicle_id);
+    $stmt->execute();
+  }
+  
+    // method to record GPS tracking data for a vehicle
+  public function recordGpsTrackingData($uniqueId, $fix_time, $latitude, $longitude, $speed, $heading, $attributes) {
+    // get the vehicle id based on uniqueId
+    $vehicle_id = $this->getVehicleIdByUniqueId($uniqueId);
+
+    $query = "INSERT INTO gps_tracking (vehicle_id, fix_time, latitude, longitude, speed, heading, attributes) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("isddds", $vehicle_id, $fix_time, $latitude, $longitude, $speed, $heading, $attributes);
+    $stmt->execute();
+    $insert_id = $stmt->insert_id;
+
+    // update the gps_tracking_id of the vehicle using the insert id
+    $this->updateGpsTrackingId($vehicle_id, $insert_id);
+  }
+  
   public function recordGasPurchase($vehicle_id, $date, $odometer, $cost, $attributes, $product) {
     $query = "INSERT INTO purchases (vehicle_id, date, odometer, cost, attributes, product) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $this->conn->prepare($query);
