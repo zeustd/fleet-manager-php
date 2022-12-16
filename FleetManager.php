@@ -53,6 +53,9 @@ class FleetManager {
   
     // method to record GPS tracking data for a vehicle
   public function recordGpsTrackingData($uniqueId, $fix_time, $latitude, $longitude, $speed, $heading, $attributes) {
+    // serialize the attributes into a string
+    $attributes = json_encode($attributes);
+    
     // get the vehicle id based on uniqueId
     $vehicle_id = $this->getVehicleIdByUniqueId($uniqueId);
 
