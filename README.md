@@ -27,3 +27,9 @@ This would print a list of all vehicles in the fleet, with each vehicle on a new
 - GPS Tracking [work in progress]
 
 
+
+## Notes
+* The database schema is not optimized for large volume of data or production usage.
+* This is only a sample concept project
+
+
