@@ -9,10 +9,10 @@ class FleetManager {
   }
 
   // method to add a new vehicle to the fleet
-  public function addVehicle($make, $model, $year, $vin) {
-    $query = "INSERT INTO fleet (make, model, year, vin) VALUES (?, ?, ?, ?)";
+  public function addVehicle($make, $model, $year, $vin, $gps_tracking_id, $uniqueId) {
+    $query = "INSERT INTO fleet (make, model, year, vin, gps_tracking_id, uniqueId) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $this->conn->prepare($query);
-    $stmt->bind_param("ssis", $make, $model, $year, $vin);
+    $stmt->bind_param("ssisi", $make, $model, $year, $vin, $gps_tracking_id, $uniqueId);
     $stmt->execute();
     return $stmt->insert_id;
   }
@@ -27,6 +27,8 @@ class FleetManager {
     }
     return $fleet;
   }
+
+  
   
   public function recordGasPurchase($vehicle_id, $date, $odometer, $cost, $attributes, $product) {
     $query = "INSERT INTO purchases (vehicle_id, date, odometer, cost, attributes, product) VALUES (?, ?, ?, ?, ?, ?)";
