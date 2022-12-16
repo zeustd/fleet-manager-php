@@ -13,23 +13,17 @@ $positionId = $data->position->id;
 $fixTime = $data->position->fixTime;
 $battery = $data->position->attributes->battery;
 $ignition = $data->position->attributes->ignition;
-$batteryLevel = $data->position->attributes->batteryLevel;
 $motion = $data->position->attributes->motion;
-$type = $data->position->attributes->type;
-$event = $data->position->attributes->event;
-$raw = $data->position->attributes->raw;
 $latitude = $data->position->latitude;
 $longitude = $data->position->longitude;
 $course = $data->positon->course;
 $deviceId = $data->device->id;
-$deviceName = $data->device->name;
 $uniqueId = $data->device->uniqueId;
-$deviceStatus = $data->device->status;
-$protocol = $data->position->protocol;
 
 $attributes = (object) [
   'ignition' => $ignition,
-  'battery' => $battery
+  'battery' => $battery,
+  'motion' => $motion
 ];
 
 $fleetManager->recordGpsTrackingData($uniqueId, $fixTime, $latitude, $longitude, $speed, #course, $attributes);
