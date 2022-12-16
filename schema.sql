@@ -3,7 +3,9 @@ CREATE TABLE fleet (
   make VARCHAR(255) NOT NULL,
   model VARCHAR(255) NOT NULL,
   year INT NOT NULL,
-  vin VARCHAR(255) NOT NULL
+  vin VARCHAR(255) NOT NULL,
+  gps_tracking_id INT,
+  uniqueId VARCHAR(255)
 );
 
 CREATE TABLE purchases (
