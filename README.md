@@ -17,6 +17,9 @@ This would print a list of all vehicles in the fleet, with each vehicle on a new
 - Set Maintenance Reminders/Schedule
 - Record Digital Documents
 - Record Accidents
+- GPS Tracking
+- - Supports GPS Listener to recieve data from Traccar and record it against the vehicle
+- - Add the trackers uniqueId against the vehicle in fleet record, and configure to forward location data to the gps.php script 
 
 ### Upcoming Features:
 - - Get Maintenace Records (Paginated)
@@ -24,7 +27,7 @@ This would print a list of all vehicles in the fleet, with each vehicle on a new
 - - Get Maintenance Reminders (Paginated)
 - - Get Digital Documents Records (Paginated)
 - - Get Accident Records (Paginated)
-- GPS Tracking [work in progress]
+
 
 
 
