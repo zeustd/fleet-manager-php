@@ -36,6 +36,20 @@ class FleetManager {
     return $stmt->insert_id;
   }
   
+  function getPaginatedGasPurchases($conn, $page, $perPage) {
+  $query = "SELECT * FROM purchases LIMIT ?, ?";
+  $stmt = $conn->prepare($query);
+  $offset = ($page - 1) * $perPage;
+  $stmt->bind_param("ii", $offset, $perPage);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $purchases = [];
+  while ($row = $result->fetch_assoc()) {
+    $purchases[] = $row;
+  }
+  return $purchases;
+}
+  
   public function recordMaintenance($vehicle_id, $date, $odometer, $description, $cost, $type) {
     $query = "INSERT INTO maintenance (vehicle_id, date, odometer, description, cost, type) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $this->conn->prepare($query);
