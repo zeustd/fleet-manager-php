@@ -7,7 +7,11 @@ For example, you can use the addVehicle method to add a new vehicle to the fleet
 You can also use the getFleet method to retrieve a list of all vehicles in the fleet:
 This would print a list of all vehicles in the fleet, with each vehicle on a new line in the format "YEAR MAKE MODEL".
 
-There is no UI for this, anyone willing to contribute please feel free to send a PR
+This project does not contain any UI design or files, it only contains classes, php functions and a datbase schema that you may use.
+
+If you would like to contribute, fix, update, refactor this code please feel free to discuss and send PR's
+PR's for UI are welcome as well.
+please share your ideas and discuss first before working on any PR's so we are alligned.
 
 
 ### Supported Features:
