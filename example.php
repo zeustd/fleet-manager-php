@@ -51,7 +51,7 @@ $latitude = 37.12345;
 $longitude = -122.54321;
 $speed = 65.4;
 $heading = 180;
-$attributes = 'ignition=on';
+$attributes = ['ignition' => 'on'];
 
 $fleetManager->recordGpsTrackingData($uniqueId, $fix_time, $latitude, $longitude, $speed, $heading, $attributes);
 
