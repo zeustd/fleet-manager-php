@@ -12,11 +12,18 @@ This would print a list of all vehicles in the fleet, with each vehicle on a new
 - Add Vehicle
 - Get Fleet (Vehicles)
 - Record Gas/Fuel Purchase
-- - Get Gas/Fuel Purchase Record (Paginated)
+- - Get Gas/Fuel Purchase Records (Paginated)
 - Record Maintenance
 - Set Maintenance Reminders/Schedule
 - Record Digital Documents
 - Record Accidents
 
+### Upcoming Features:
+- - Get Maintenace Records (Paginated)
+- - Get Maintenance Records (Paginated)
+- - Get Maintenance Reminders (Paginated)
+- - Get Digital Documents Records (Paginated)
+- - Get Accident Records (Paginated)
+- GPS Tracking [work in progress]
 
 
