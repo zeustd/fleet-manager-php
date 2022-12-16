@@ -43,4 +43,16 @@ $fleetManager->manageDigitalDocuments($vehicle_id, "Owner's Manual", "owners_man
 // record an accident for the vehicle
 $fleetManager->recordAccident($vehicle_id, "2022-12-15", "Highway 101", "Rear-ended by another vehicle", 500);
 
+
+// record GPS tracking data for a vehicle
+$uniqueId = '12345';
+$fix_time = '2022-12-16 14:30:00';
+$latitude = 37.12345;
+$longitude = -122.54321;
+$speed = 65.4;
+$heading = 180;
+$attributes = 'ignition=on';
+
+$fleetManager->recordGpsTrackingData($uniqueId, $fix_time, $latitude, $longitude, $speed, $heading, $attributes);
+
 ?>
