@@ -18,6 +18,11 @@ foreach ($fleet as $vehicle) {
 // record a gas purchase for the vehicle
 $purchase_id = $fleetManager->recordGasPurchase($vehicle_id, "2022-12-15", 1234, 50.75, '{"gallons": 10}', "gas");
 
+//get paginated gas purchase for the vehicle
+$page = 1;
+$perPage = 10;
+$purchases = getPaginatedGasPurchases($conn, $page, $perPage);
+
 // record a maintenance event for vehicle with id 1
 $vehicle_id = 1;
 $date = "2022-12-15";
