@@ -16,6 +16,36 @@ class FleetManager {
     $stmt->execute();
     return $stmt->insert_id;
   }
+  
+  // method to edit a vehicle in the fleet
+  public function editVehicle($vehicle_id, $make=null, $model=null, $year=null) {
+    $query = "UPDATE fleet SET ";
+    $params = array();
+    $types = "";
+    if ($make) {
+      $query .= "make = ?, ";
+      $params[] = $make;
+      $types .= "s";
+    }
+    if ($model) {
+      $query .= "model = ?, ";
+      $params[] = $model;
+      $types .= "s";
+    }
+    if ($year) {
+      $query .= "year = ?, ";
+      $params[] = $year;
+      $types .= "i";
+    }
+    $query = rtrim($query, ", "); // remove the last comma
+    $query .= " WHERE id = ?";
+    $params[] = $vehicle_id;
+    $types .= "i";
+    
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+  }
 
   // method to get a list of all vehicles in the fleet
   public function getFleet($page, $perPage) {
