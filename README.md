@@ -16,6 +16,7 @@ please share your ideas and discuss first before working on any PR's so we are a
 
 ### Supported Features:
 - Add Vehicle
+- Edit Vehicle
 - Get Fleet (Vehicles)
 - Record Gas/Fuel Purchase
 - - Get Gas/Fuel Purchase Records (Paginated)
@@ -40,5 +41,3 @@ please share your ideas and discuss first before working on any PR's so we are a
 ## Notes
 * The database schema is not optimized for large volume of data or production usage.
 * This is only a sample concept project
-
-
