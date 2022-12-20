@@ -9,6 +9,9 @@ $fleet_manager = new FleetManager($db_conn);
 //you can use the addVehicle method to add a new vehicle to the fleet:
 $vehicle_id = $fleet_manager->addVehicle("Honda", "Accord", 2020, "123456789ABCDEFG");
 
+//you can use the editVehicle method to edit a vehicle in the fleet.
+$fleet_manager->editVehicle(1, make='Ford', year=2022);
+
 //You can also use the getFleet method to retrieve a list of all vehicles in the fleet:
 $fleet = $fleet_manager->getFleet();
 foreach ($fleet as $vehicle) {
