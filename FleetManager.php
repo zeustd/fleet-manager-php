@@ -121,6 +121,13 @@ class FleetManager {
     return $purchases;
   }
   
+  public function recordRegistrationData($vehicle_id, $registration_number, $registration_date, $renewal_date) {
+    $query = "UPDATE fleet SET registration_number = ?, registration_date = ?, renewal_date = ? WHERE id = ?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param("sssi", $registration_number, $registration_date, $renewal_date, $vehicle_id);
+    $stmt->execute();
+  }
+  
   public function recordMaintenance($vehicle_id, $date, $odometer, $description, $cost, $type) {
     $query = "INSERT INTO maintenance (vehicle_id, date, odometer, description, cost, type) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $this->conn->prepare($query);
