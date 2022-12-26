@@ -26,6 +26,9 @@ $page = 1;
 $perPage = 10;
 $purchases = getPaginatedGasPurchases($conn, $page, $perPage);
 
+// record a registration or renewal entry for the vehicle
+$fleetManager->recordRegistrationData(123, 'ABC123', '2022-01-01', '2023-01-01');
+
 // record a maintenance event for vehicle with id 1
 $vehicle_id = 1;
 $date = "2022-12-15";
