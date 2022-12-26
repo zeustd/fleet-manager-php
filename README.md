@@ -20,6 +20,7 @@ please share your ideas and discuss first before working on any PR's so we are a
 - Get Fleet (Vehicles)
 - Record Gas/Fuel Purchase
 - - Get Gas/Fuel Purchase Records (Paginated)
+- Record registration and renewal of vehicle
 - Record Maintenance
 - Set Maintenance Reminders/Schedule
 - Record Digital Documents
